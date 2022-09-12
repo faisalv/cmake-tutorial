@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
+# cmake -G "Visual Studio 17 2022" ..\..\cmake-tutorial\Step3
 
 # set the project name and version
 project(Tutorial VERSION 1.0)
@@ -22,7 +23,7 @@ if(USE_MYMATH)
 endif()
 
 # add the executable
-add_executable(Tutorial tutorial.cxx)
+add_executable(Tutorial tutorial.cxx "${PROJECT_BINARY_DIR}/TutorialConfig.h")
 
 target_link_libraries(Tutorial PUBLIC ${EXTRA_LIBS})
 
